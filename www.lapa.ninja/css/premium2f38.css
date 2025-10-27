@@ -1,0 +1,300 @@
+/* Premium System Styles */
+
+/* Premium Badge Styles */
+.premium-badge {
+  @apply inline-block px-2 py-1 text-xs font-semibold rounded-full;
+}
+
+.premium-badge.active {
+  @apply text-green-800 bg-green-100;
+}
+
+.premium-badge.inactive {
+  @apply text-gray-600 bg-gray-100;
+}
+
+/* Premium Content Gating */
+.premium-content {
+  transition: opacity 0.3s ease;
+}
+
+.premium-gate {
+  @apply relative;
+}
+
+.premium-gate::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent z-10;
+}
+
+.premium-gate .premium-overlay {
+  @apply absolute inset-0 flex items-center justify-center z-20;
+}
+
+.premium-upgrade-prompt {
+  @apply bg-white border border-gray-200 rounded-lg p-6 shadow-lg max-w-sm mx-auto text-center;
+}
+
+.premium-upgrade-prompt h3 {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.premium-upgrade-prompt p {
+  @apply text-gray-600 mb-4;
+}
+
+.premium-upgrade-btn {
+  @apply inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium;
+}
+
+/* Premium Status Indicators */
+.premium-status {
+  @apply flex items-center space-x-2;
+}
+
+.premium-status.active {
+  @apply text-green-600;
+}
+
+.premium-status.inactive {
+  @apply text-gray-600;
+}
+
+.premium-status .icon {
+  @apply w-5 h-5;
+}
+
+/* Ad-free Experience */
+.premium-user .ad,
+.premium-user .advertisement,
+.premium-user [data-ad],
+.premium-user .google-ad {
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Loading States */
+.premium-loading {
+  @apply flex items-center space-x-2 text-gray-600;
+}
+
+.premium-loading .spinner {
+  @apply animate-spin w-4 h-4;
+}
+
+/* Error States */
+.premium-error {
+  @apply flex items-center space-x-2 text-red-600 bg-red-50 border border-red-200 rounded-lg p-3;
+}
+
+.premium-error .icon {
+  @apply w-5 h-5 flex-shrink-0;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .premium-upgrade-prompt {
+    @apply mx-4;
+  }
+  
+  .premium-gate .premium-overlay {
+    @apply px-4;
+  }
+}
+
+/* Animation for premium content reveal */
+@keyframes premiumReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.premium-content.revealed {
+  animation: premiumReveal 0.5s ease-out;
+}
+
+/* Account Page Premium Status Transitions */
+#premium-section {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+#premium-immediate {
+  @apply transition-all duration-300 ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#premium-immediate:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#premium-status {
+  @apply transition-all duration-300 ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+#premium-status:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#premium-loading {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Smooth state transitions */
+.premium-state-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+/* Thay thế translateY bằng opacity-only transitions */
+.premium-state-enter {
+  opacity: 0;
+  /* Removed translateY to prevent layout shift */
+}
+
+.premium-state-enter-active {
+  opacity: 1;
+  /* Removed transform to prevent layout shift */
+}
+
+.premium-state-exit {
+  opacity: 1;
+  /* Removed transform to prevent layout shift */
+}
+
+.premium-state-exit-active {
+  opacity: 0;
+  /* Removed translateY to prevent layout shift */
+}
+
+/* Premium details loading animation */
+.premium-details-loading {
+  @apply animate-pulse;
+}
+
+.premium-details-loading .placeholder {
+  @apply bg-gray-200 rounded h-4 mb-2;
+}
+
+.premium-details-loading .placeholder.short {
+  @apply w-1/3;
+}
+
+.premium-details-loading .placeholder.medium {
+  @apply w-1/2;
+}
+
+.premium-details-loading .placeholder.long {
+  @apply w-3/4;
+}
+
+/* Auth Loading Styles */
+#auth-loading {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+#auth-loading.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#user-info {
+  @apply transition-all duration-300 ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+#user-info:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#sign-in-prompt {
+  @apply transition-all duration-300 ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+#sign-in-prompt:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth auth state transitions */
+.auth-state-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+.auth-state-enter {
+  opacity: 0;
+  /* Removed translateY to prevent layout shift */
+}
+
+.auth-state-enter-active {
+  opacity: 1;
+  /* Removed transform to prevent layout shift */
+}
+
+.auth-state-exit {
+  opacity: 1;
+  /* Removed transform to prevent layout shift */
+}
+
+.auth-state-exit-active {
+  opacity: 0;
+  /* Removed translateY to prevent layout shift */
+}
+
+/* Premium member highlight */
+.premium-member-highlight {
+  @apply bg-gradient-to-r from-yellow-50 to-yellow-100 border-l-4 border-yellow-400 p-4 rounded-r-lg;
+}
+
+.premium-member-highlight .title {
+  @apply text-yellow-800 font-semibold;
+}
+
+.premium-member-highlight .description {
+  @apply text-yellow-700 text-sm;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .premium-upgrade-prompt {
+    @apply bg-gray-800 border-gray-700 text-white;
+  }
+  
+  .premium-upgrade-prompt h3 {
+    @apply text-white;
+  }
+  
+  .premium-upgrade-prompt p {
+    @apply text-gray-300;
+  }
+  
+  .premium-gate::before {
+    @apply from-gray-900 via-gray-900/80;
+  }
+  
+  .premium-member-highlight {
+    @apply from-yellow-900/20 to-yellow-800/20 border-yellow-500;
+  }
+  
+  .premium-member-highlight .title {
+    @apply text-yellow-400;
+  }
+  
+  .premium-member-highlight .description {
+    @apply text-yellow-300;
+  }
+}

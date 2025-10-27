@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.clerk.lapa.ninja	TRUE	/	FALSE	1999999999	__cf_bm	BbzmUAN8d8ZiPEmZgccm6_VSA8URHUZOIyx6ku7kbbk-1761564863-1.0.1.1-uQ66Akx7DV.JYRfJ70VkWPT0l4ZZsT1EBtNy8mo6qaQ5YYIZM9QuEYNd9KdzXL30NBP9NuGPxT0BeFFVMFqxGc24SK6TX6jf68ba3r_dFwI
+.clerk.lapa.ninja	TRUE	/	FALSE	1999999999	_cfuvid	N9j6aOxN6DzrW.KE2tsMvuHe7CNlqtCWXbTCcpxWQ5g-1761564863771-0.0.1.1-604800000
+clerk.lapa.ninja	TRUE	/	FALSE	1999999999	SameSite	None
+
